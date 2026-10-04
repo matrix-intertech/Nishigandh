@@ -1,0 +1,2 @@
+import { images } from "./images";
+export type Activity = { slug: string; title: string; description: string; image: string; visible: boolean; }; export const activities: Activity[] = [ { slug: 'nature-walks', title: 'Nature Walks', description: 'Explore the surrounding greenery on foot.', image: images.activity1.src, visible: true }, { slug: 'lake-visit', title: 'Lake Visit', description: 'Spend a quiet afternoon by the water.', image: images.activity2.src, visible: true } ];

@@ -1,69 +1,90 @@
-import Image from "next/image";
+import Link from "next/link";
+import { SiteImage } from "@/components/ui/SiteImage";
+import { images } from "@/data/images";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <>
+      {/* Hero Section */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <SiteImage src={images.homeHero.src} alt="Nishigandh Farms" fill priority placeholderType="hero" />
+        </div>
+        <div className="absolute inset-0 bg-secondary/80 mix-blend-multiply z-10" />
+        
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6 leading-tight">
+            Nishigandh <br className="hidden md:block"/> Farms
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl md:text-2xl text-primary-foreground/90 font-light mb-12 max-w-2xl mx-auto tracking-wide">
+            A quiet escape into the heart of nature.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <Link href="/booking" className="px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-background hover:text-primary transition-colors">
+              Book Your Stay
+            </Link>
+            <Link href="/resort" className="px-8 py-4 border border-primary-foreground text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary-foreground hover:text-primary transition-colors">
+              Explore Nishigandh
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-24 md:py-32 px-6 bg-background">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-8 leading-tight">
+            Stay close to nature. <br />
+            Wake up to quiet landscapes, green surroundings and the rhythm of the countryside.
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Nestled in the pristine landscape of Koyana, Nishigandh Farms is a sanctuary for those seeking peace and authenticity. 
+            Experience our red-brick cottages, lush gardens, and warm hospitality.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Stay / Accommodation Preview */}
+      <section className="py-24 bg-muted">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="max-w-2xl">
+              <span className="text-accent uppercase tracking-widest text-sm font-semibold mb-4 block">The Stay</span>
+              <h2 className="font-heading text-4xl md:text-6xl text-foreground mb-6">Rustic Elegance</h2>
+              <p className="text-muted-foreground text-lg">
+                Our red-brick cottages are designed to blur the lines between indoors and out, 
+                allowing you to become one with the surrounding greenery.
+              </p>
+            </div>
+            <Link href="/accommodation" className="mt-8 md:mt-0 text-primary border-b border-primary pb-1 uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-colors">
+              Explore Stays
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            {/* Editorial asymmetric layout */}
+            <div className="md:col-span-8 aspect-[4/3] bg-primary/10 relative overflow-hidden">
+              <SiteImage src={images.cottage1.src} alt="Cottage" fill placeholderType="landscape" />
+            </div>
+            <div className="md:col-span-4 aspect-square bg-secondary/20 relative overflow-hidden mt-8 md:mt-32">
+              <SiteImage src={images.natureDetail.src} alt="Garden detail" fill placeholderType="portrait" />
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Final Booking CTA */}
+      <section className="py-32 px-6 bg-primary text-primary-foreground text-center">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="font-heading text-4xl md:text-6xl mb-8">Ready to disconnect?</h2>
+          <p className="text-lg text-primary-foreground/80 mb-12">
+            Join us at Nishigandh Farms for an unforgettable retreat into nature.
+          </p>
+          <Link href="/booking" className="px-10 py-5 bg-background text-primary text-sm tracking-widest uppercase hover:bg-accent hover:text-accent-foreground transition-colors">
+            Check Availability
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
