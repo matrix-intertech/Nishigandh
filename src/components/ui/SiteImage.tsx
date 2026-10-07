@@ -49,14 +49,17 @@ export function SiteImage({
     );
   }
 
+  // Default responsive sizes when using fill to prevent massive downloads on mobile
+  const responsiveSizes = sizes || (fill ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : undefined);
+
   return (
     <Image
       src={src}
-      alt={alt}
+      alt={alt || "Image"}
       fill={fill}
       width={width}
       height={height}
-      sizes={sizes}
+      sizes={responsiveSizes}
       priority={priority}
       className={`object-cover ${className}`}
       style={{ objectPosition }}
