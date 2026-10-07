@@ -51,6 +51,7 @@ export function Navbar() {
           {[
             { label: "Resort", href: "/resort" },
             { label: "Stay", href: "/accommodation" },
+            { label: "Activities", href: "/activities" },
             { label: "Experiences", href: "/experiences" },
             { label: "Nature", href: "/nature" },
             { label: "Restaurant", href: "/restaurant" },
@@ -99,6 +100,7 @@ export function Navbar() {
           {[
             { label: "Resort", href: "/resort" },
             { label: "Stay", href: "/accommodation" },
+            { label: "Activities", href: "/activities" },
             { label: "Experiences", href: "/experiences" },
             { label: "Nature", href: "/nature" },
             { label: "Restaurant", href: "/restaurant" },

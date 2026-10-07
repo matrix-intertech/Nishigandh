@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { experiences } from "@/data/experiences";
 import { SiteImage } from "@/components/ui/SiteImage";
 
@@ -42,6 +43,19 @@ export default function ExperiencesPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Activities CTA */}
+      <section className="py-24 bg-muted">
+        <div className="container mx-auto px-6 text-center max-w-2xl">
+          <h2 className="font-heading text-3xl md:text-4xl mb-6">Looking for more?</h2>
+          <p className="text-muted-foreground text-lg mb-8">
+            Beyond these curated moments, discover our full range of recreational facilities, indoor games, and outdoor adventures.
+          </p>
+          <Link href="/activities" className="inline-block text-primary border-b border-primary pb-1 uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-colors">
+            Discover All Activities
+          </Link>
         </div>
       </section>
     </div>

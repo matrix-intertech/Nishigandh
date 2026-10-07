@@ -73,6 +73,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fun & Entertainment Preview */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="max-w-2xl">
+              <span className="text-accent uppercase tracking-widest text-sm font-semibold mb-4 block">Fun & Entertainment</span>
+              <h2 className="font-heading text-4xl md:text-6xl text-foreground mb-6">More Than a Stay</h2>
+              <p className="text-muted-foreground text-lg">
+                Swimming, boating, jungle adventures, family activities, indoor games, bonfires and more — discover the many ways to enjoy your time at Nishigandh Farms.
+              </p>
+            </div>
+            <Link href="/activities" className="mt-8 md:mt-0 text-primary border-b border-primary pb-1 uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-colors">
+              Explore Fun & Entertainment
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="aspect-[4/5] bg-muted relative overflow-hidden group">
+              <SiteImage src={images.homeCategoryWater.src} alt="Water & Adventure" fill placeholderType="portrait" className="transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="font-heading text-2xl">Water & Adventure</h3>
+              </div>
+            </div>
+            <div className="aspect-[4/5] bg-muted relative overflow-hidden group">
+              <SiteImage src={images.homeCategoryFamily.src} alt="Family & Kids" fill placeholderType="portrait" className="transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="font-heading text-2xl">Family & Kids</h3>
+              </div>
+            </div>
+            <div className="aspect-[4/5] bg-muted relative overflow-hidden group">
+              <SiteImage src={images.homeCategoryNature.src} alt="Outdoor & Nature" fill placeholderType="portrait" className="transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="font-heading text-2xl">Outdoor & Nature</h3>
+              </div>
+            </div>
+            <div className="aspect-[4/5] bg-muted relative overflow-hidden group">
+              <SiteImage src={images.homeCategoryIndoor.src} alt="Indoor Entertainment" fill placeholderType="portrait" className="transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="font-heading text-2xl">Indoor Entertainment</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final Booking CTA */}
       <section className="py-32 px-6 bg-primary text-primary-foreground text-center">
         <div className="container mx-auto max-w-3xl">
