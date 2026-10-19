@@ -17,7 +17,7 @@ export default function ExperiencesPage() {
         <h1 className="font-heading text-5xl md:text-7xl text-foreground mb-6">Experience the quiet.</h1>
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
           At Nishigandh Farms, true luxury lies in the space to breathe. 
-          Discover the moments we've crafted to help you slow down and reconnect with the simple joys of nature.
+          Discover the moments we&apos;ve crafted to help you slow down and reconnect with the simple joys of nature.
         </p>
       </section>
 

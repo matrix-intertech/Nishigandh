@@ -1,14 +1,16 @@
 import Link from "next/link";
+import { SiteImage } from "@/components/ui/SiteImage";
+import { images } from "@/data/images";
+import { getBookingUrl } from "@/lib/booking";
 
 export const metadata = {
   title: "The Resort | Nishigandh Farms",
   description: "Discover the philosophy, architecture, and hospitality behind Nishigandh Farms.",
 };
 
-import { SiteImage } from "@/components/ui/SiteImage";
-import { images } from "@/data/images";
-
 export default function ResortPage() {
+  const bookingUrl = getBookingUrl();
+
   return (
     <div className="pt-24 min-h-screen bg-background">
       {/* Hero */}
@@ -67,7 +69,7 @@ export default function ResortPage() {
           <Link href="/accommodation" className="px-8 py-4 border border-foreground text-foreground text-sm tracking-widest uppercase hover:bg-foreground hover:text-background transition-colors">
             View Accommodations
           </Link>
-          <Link href="/booking" className="px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-accent transition-colors">
+          <Link href={bookingUrl} className="px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-accent transition-colors">
             Book Your Stay
           </Link>
         </div>

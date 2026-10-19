@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import Image from "next/image";
+import { getBookingUrl } from "@/lib/booking";
 
 export function Footer() {
+  const bookingUrl = getBookingUrl();
+
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-6 md:px-12">
@@ -37,7 +40,7 @@ export function Footer() {
               {siteConfig.email ? <li>{siteConfig.email}</li> : <li>Contact details coming soon</li>}
               {siteConfig.phone && <li>{siteConfig.phone}</li>}
               <li className="mt-6">
-                <Link href="/booking" className="inline-block border border-primary-foreground px-6 py-2 hover:bg-primary-foreground hover:text-primary transition-colors uppercase text-sm tracking-wider">
+                <Link href={bookingUrl} className="inline-block border border-primary-foreground px-6 py-2 hover:bg-primary-foreground hover:text-primary transition-colors uppercase text-sm tracking-wider">
                   Book Your Stay
                 </Link>
               </li>

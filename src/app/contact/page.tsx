@@ -2,6 +2,7 @@ import { siteConfig } from "@/data/site";
 import Link from "next/link";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { images } from "@/data/images";
+import { getBookingUrl } from "@/lib/booking";
 
 export const metadata = {
   title: "Contact Us | Nishigandh Farms",
@@ -9,6 +10,8 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const bookingUrl = getBookingUrl();
+
   return (
     <div className="pt-24 min-h-screen bg-background">
       <section className="py-24 px-6 text-center max-w-3xl mx-auto">
@@ -26,7 +29,7 @@ export default function ContactPage() {
               <p className="text-muted-foreground mb-4">
                 To check availability or book a stay, please use our booking gateway.
               </p>
-              <Link href="/booking" className="inline-block border-b border-foreground pb-1 uppercase tracking-widest text-sm hover:text-primary transition-colors">
+              <Link href={bookingUrl} className="inline-block border-b border-foreground pb-1 uppercase tracking-widest text-sm hover:text-primary transition-colors">
                 Book Your Stay
               </Link>
             </div>

@@ -23,7 +23,7 @@ export default function ReviewsPage() {
             <div className="space-y-12">
               {visibleReviews.map((review, i) => (
                 <div key={i} className="text-center border-b border-border pb-12 last:border-0">
-                  <p className="text-2xl font-heading italic leading-relaxed mb-6">"{review.text}"</p>
+                  <p className="text-2xl font-heading italic leading-relaxed mb-6">&ldquo;{review.text}&rdquo;</p>
                   <p className="text-sm tracking-widest uppercase text-muted-foreground">— {review.author}</p>
                 </div>
               ))}

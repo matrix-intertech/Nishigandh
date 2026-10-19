@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { images } from "@/data/images";

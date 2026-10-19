@@ -49,7 +49,7 @@ export default function NaturePage() {
       <section className="py-24 bg-primary text-primary-foreground text-center px-6">
         <div className="container mx-auto max-w-4xl">
           <h3 className="font-heading text-3xl md:text-5xl leading-relaxed italic">
-            "There is a profound stillness here that you can't find in the city. The rhythm of the days is dictated by the sun and the trees."
+            &ldquo;There is a profound stillness here that you can&apos;t find in the city. The rhythm of the days is dictated by the sun and the trees.&rdquo;
           </h3>
         </div>
       </section>

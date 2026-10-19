@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { accommodations } from "@/data/accommodation";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { getBookingUrl } from "@/lib/booking";
 
 export const metadata = {
   title: "Stay | Nishigandh Farms",
@@ -8,6 +9,7 @@ export const metadata = {
 };
 
 export default function AccommodationPage() {
+  const bookingUrl = getBookingUrl();
   const visibleStays = accommodations.filter((acc) => acc.visible);
 
   return (
@@ -46,7 +48,7 @@ export default function AccommodationPage() {
                   <Link href={`/accommodation/${acc.slug}`} className="text-sm tracking-widest uppercase border-b border-foreground pb-1 hover:text-primary hover:border-primary transition-colors">
                     View Details
                   </Link>
-                  <Link href="/booking" className="text-sm tracking-widest uppercase text-accent border-b border-transparent pb-1 hover:border-accent transition-colors">
+                  <Link href={bookingUrl} className="text-sm tracking-widest uppercase text-accent border-b border-transparent pb-1 hover:border-accent transition-colors">
                     Check Availability
                   </Link>
                 </div>

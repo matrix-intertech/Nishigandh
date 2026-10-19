@@ -5,8 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { getBookingUrl } from "@/lib/booking";
 
 export function Navbar() {
+  const bookingUrl = getBookingUrl();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -70,7 +73,7 @@ export function Navbar() {
             </Link>
           )})}
           <Link
-            href="/booking"
+            href={bookingUrl}
             className={`text-sm tracking-wider uppercase px-6 py-2 border transition-colors ${
               !isScrolled && hasDarkHero
                 ? "border-white text-white hover:bg-white hover:text-primary"
@@ -117,7 +120,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/booking"
+            href={bookingUrl}
             onClick={() => setMobileMenuOpen(false)}
             className="text-lg tracking-wider uppercase px-8 py-3 bg-primary text-primary-foreground mt-4"
           >

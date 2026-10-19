@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAccommodationBySlug, accommodations } from "@/data/accommodation";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { getBookingUrl } from "@/lib/booking";
 
 export async function generateStaticParams() {
   return accommodations.map((acc) => ({
@@ -16,6 +17,7 @@ export default async function AccommodationDetailPage({
 }) {
   const { slug } = await params;
   const accommodation = getAccommodationBySlug(slug);
+  const bookingUrl = getBookingUrl();
 
   if (!accommodation || !accommodation.visible) {
     notFound();
@@ -62,7 +64,7 @@ export default async function AccommodationDetailPage({
               <p className="text-muted-foreground text-sm mb-8">
                 Ready to escape to the Koyana landscape? Check availability for this cottage.
               </p>
-              <Link href="/booking" className="block text-center w-full bg-primary text-primary-foreground py-4 uppercase tracking-widest text-sm hover:bg-foreground transition-colors">
+              <Link href={bookingUrl} className="block text-center w-full bg-primary text-primary-foreground py-4 uppercase tracking-widest text-sm hover:bg-foreground transition-colors">
                 Check Availability
               </Link>
             </div>

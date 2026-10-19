@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { images } from "@/data/images";
+import { getBookingUrl } from "@/lib/booking";
 
 export default function Home() {
+  const bookingUrl = getBookingUrl();
+
   return (
     <>
       {/* Hero Section */}
@@ -20,7 +23,7 @@ export default function Home() {
             A quiet escape into the heart of nature.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
-            <Link href="/booking" className="px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-background hover:text-primary transition-colors">
+            <Link href={bookingUrl} className="px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-background hover:text-primary transition-colors">
               Book Your Stay
             </Link>
             <Link href="/resort" className="px-8 py-4 border border-primary-foreground text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary-foreground hover:text-primary transition-colors">
@@ -129,7 +132,7 @@ export default function Home() {
           <p className="text-lg text-primary-foreground/80 mb-12">
             Join us at Nishigandh Farms for an unforgettable retreat into nature.
           </p>
-          <Link href="/booking" className="px-10 py-5 bg-background text-primary text-sm tracking-widest uppercase hover:bg-accent hover:text-accent-foreground transition-colors">
+          <Link href={bookingUrl} className="px-10 py-5 bg-background text-primary text-sm tracking-widest uppercase hover:bg-accent hover:text-accent-foreground transition-colors">
             Check Availability
           </Link>
         </div>
